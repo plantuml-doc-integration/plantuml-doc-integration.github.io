@@ -1,5 +1,9 @@
 deploy:
 	git status
 	git add .
-	git commit -m "Deployment on $(date "+%H:%M:%S %d/%m/%y")"
+	echo "Deployment on $$(date "+%H:%M:%S %d/%m/%y")" > date
+	git commit -F date
 	git push
+	echo
+	echo "Deployed! Visit https://plantuml-doc-integration.github.io"
+	echo
